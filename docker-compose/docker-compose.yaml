@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+    school-system-core:
+        image: school-system-core
+        container_name: school-system-core-container
+        ports:
+            - "8000:8000"
+        volumes:
+            - /home/ling/文档/school-system/core:/root/school-system
+        command: 
+            tail -f /root/school-system/README.md

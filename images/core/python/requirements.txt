@@ -1,0 +1,5 @@
+Django >= 3.0
+djangorestframework 
+markdown    # Markdown support for browsable API
+django-filter   # Filtering support
+jwcrypto    # JWT
