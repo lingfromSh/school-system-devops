@@ -3,3 +3,6 @@ djangorestframework
 markdown    # Markdown support for browsable API
 django-filter   # Filtering support
 jwcrypto    # JWT
+django-redis
+psycopg2
+django[argon2]

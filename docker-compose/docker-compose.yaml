@@ -10,3 +10,34 @@ services:
             - /home/ling/文档/school-system/core:/root/school-system
         command: 
             tail -f /root/school-system/README.md
+    school-system-postgres-write:
+        image: postgres:alpine
+        container_name: school-system-postgres-write-container
+        environment: 
+            - POSTGRES_USER=admin
+            - POSTGRES_PASSWORD=password
+            - PGDATA=/var/lib/postgresql/data/pgdata
+        ports: 
+            - "8001:5432"
+        volumes: 
+            - /home/ling/文档/school-system/postgres_data_write_volume:/var/lib/postgresql/data/pgdata
+    school-system-postgres-read:
+        image: postgres:alpine
+        container_name: school-system-postgres-read-container
+        environment: 
+            - POSTGRES_USER=admin
+            - POSTGRES_PASSWORD=password
+            - PGDATA=/var/lib/postgresql/data/pgdata
+        ports: 
+            - "8002:5432"
+        volumes: 
+            - /home/ling/文档/school-system/postgres_data_read_volume:/var/lib/postgresql/data/pgdata
+    school-system-redis-cache:
+        image: redis:alpine
+        container_name: school-system-redis-cache
+        ports: 
+            - "8003:6379"
+        volumes: 
+            - /home/ling/文档/school-system/devops/images/redis/redis.conf:/usr/local/etc/redis/redis.conf
+        command: 
+            redis-server "/usr/local/etc/redis/redis.conf"
