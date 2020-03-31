@@ -1,8 +1,11 @@
 Django >= 3.0
 djangorestframework 
-markdown    # Markdown support for browsable API
 django-filter   # Filtering support
-jwcrypto    # JWT
 django-redis
+coreapi
+markdown    # Markdown support for browsable API
+jwcrypto    # JWT
 psycopg2
 django[argon2]
+channels
+django-redis-cache
