@@ -22,7 +22,7 @@ COPY ./python/requirements.txt /root/requirements.txt
 # Use Tsinghua mirror instead of original apk source
 COPY ./apk/repositories /etc/apk/repositories
 
-RUN apk update && apk upgrade && apk add git python3 python3-dev gcc g++ linux-headers libffi-dev openssl-dev postgres-dev && \
+RUN apk update && apk upgrade && apk add git python3 python3-dev gcc g++ linux-headers libffi-dev openssl-dev postgresql-dev && \
     pip3 config set global.index-url "https://pypi.tuna.tsinghua.edu.cn/simple" && \
     pip3 install -U pip && pip3 install -r ${PIP_REQUIREMENTS} && \
     git clone https://github.com/lingfromSh/school-system-core.git ${PROJECT_WORKDIR} && \
