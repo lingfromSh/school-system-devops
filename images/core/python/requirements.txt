@@ -9,3 +9,4 @@ psycopg2
 django[argon2]
 channels
 django-redis-cache
+Hiredis

@@ -19,7 +19,7 @@ EXPOSE 8000
 
 # Add requirements for python lib
 COPY ./python/requirements.txt /root/requirements.txt
-# Use Tsinghua mirror instead of original apk source
+# Use tsinghua mirror instead of original apk source
 COPY ./apk/repositories /etc/apk/repositories
 
 RUN apk update && apk upgrade && apk add git python3 python3-dev gcc g++ linux-headers libffi-dev openssl-dev postgresql-dev && \
